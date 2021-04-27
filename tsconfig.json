@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    // 配置引入文件根目录
+    "baseUrl": "./src",
     "target": "es5",
     "lib": [
       "dom",
