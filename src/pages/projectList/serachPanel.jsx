@@ -1,22 +1,10 @@
-import { useState, useEffect} from 'react';
-export const SearchPabel  = ()=>{
-    const [param,setParam] = useState({
-        name: "",
-        personId: ""
-    });
+import React, {useState} from 'react';
+export const SearchPabel  = ({param,setParam})=>{
+
     const [users, setUsers] = useState([]);
     // 选项列表
-    const [list,setList] =  useState([]);
 
-    // 初始化行为
-    useEffect(()=>{
-        // 获取选项列表
-        fetch("").then(async res=>{
-            if(res.ok){
-                setList(await res.json());
-            }
-        })
-    },[param]);
+  
 
     return (<form>
         <div>
