@@ -5,11 +5,19 @@ export const SearchPabel  = ()=>{
         personId: ""
     });
     const [users, setUsers] = useState([]);
+    // 选项列表
+    const [list,setList] =  useState([]);
+
+    // 初始化行为
     useEffect(()=>{
+        // 获取选项列表
         fetch("").then(async res=>{
-            console.log(res)
+            if(res.ok){
+                setList(await res.json());
+            }
         })
     },[param]);
+
     return (<form>
         <div>
             <input type="text" value={param.name} onChange={evt => setParam({...param,name:evt.target.name})}/>
@@ -17,7 +25,10 @@ export const SearchPabel  = ()=>{
                 ...param,
                 personId: evt.target.personId
             })}}>
-                <option value=""></option>
+                <option value={''}>负责人</option>
+                {
+                    users.map(item=> <option value={item.id}>{item.name}</option> )
+                }
             </select>
         </div>
     </form>)
