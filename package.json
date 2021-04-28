@@ -10,6 +10,7 @@
     "@types/node": "^12.20.10",
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
+    "qs": "^6.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
+    "@types/qs": "^6.9.6",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^6.0.0",
     "json-server": "^0.16.3",
@@ -57,7 +59,7 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "lint-staged":{
+  "lint-staged": {
     "*.{js,css,md,ts,tsx}": "prettier --write"
   }
 }

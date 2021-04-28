@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-export const List = ({list})=>{
+export const List = ({list,users})=>{
     return (<table>
         <thead>
             <tr>
@@ -8,7 +7,14 @@ export const List = ({list})=>{
             </tr>
         </thead>
         <tbody>
-
+            {
+                list.map(item=>{
+                    return (<tr key={item.personId}>
+                        <td>{item.name}</td>
+                        <td>{users.find(user=>user.id === item.personId)?.name}</td>
+                    </tr>)
+                })
+            }
         </tbody>
     </table>)
 }
